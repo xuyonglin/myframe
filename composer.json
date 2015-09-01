@@ -1,0 +1,13 @@
+{
+  "require": {
+      "azi/input": "*"
+  },
+  "autoload": {
+    "classmap": [
+        "libs/",
+        "applications/",
+        "base/controllers/",
+        "base/models/"
+    ]
+  }
+}

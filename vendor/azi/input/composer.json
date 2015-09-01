@@ -1,0 +1,22 @@
+{
+    "name": "azi/input",
+    "description": "OO way to interact with user input",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Azi Baloch",
+            "email": "azeemhassni@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "^2.2"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Azi\\": "src"
+        }
+    }
+}
