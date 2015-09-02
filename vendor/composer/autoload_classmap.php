@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Utils' => $baseDir . '/helpers/Utils.php',
     'applications\\demo\\controllers\\DemoController' => $baseDir . '/applications/demo/controllers/DemoController.php',
     'applications\\demo\\models\\AddressModel' => $baseDir . '/applications/demo/models/AddressModel.php',
     'applications\\demo\\models\\UserinfoModel' => $baseDir . '/applications/demo/models/UserinfoModel.php',
@@ -15,6 +16,7 @@ return array(
     'applications\\lbs\\models\\UserinfoModel' => $baseDir . '/applications/lbs/models/UserinfoModel.php',
     'base\\controllers\\BaseController' => $baseDir . '/base/controllers/BaseController.php',
     'base\\models\\BaseModel' => $baseDir . '/base/models/BaseModel.php',
+    'bdlbs' => $baseDir . '/libs/bdlbs.php',
     'cache' => $baseDir . '/libs/cache.php',
     'run' => $baseDir . '/libs/run.php',
 );
