@@ -4,7 +4,7 @@ namespace applications\demo\controllers;
 use base\controllers\BaseController;
 use applications\demo\models\AddressModel;
 use applications\demo\models\UserinfoModel;
-
+use Azi\Input;
 /**
  * author: xuyonglin@intv.com.cn
  */
@@ -30,6 +30,12 @@ class DemoController extends BaseController{
         //result/one/count
         $re = $userModel->where(['id>0'])->orderBy('id desc')->limit(10)->result();
         return $re;
+    }
+    
+    //获取IP
+    public function actionGetip(){
+        $ip = \Utils::getIP();
+        echo $ip;exit;
     }
     
     //修改数据
@@ -86,7 +92,19 @@ class DemoController extends BaseController{
         return $cache->get($cacheKey);
     }
     
+    public function actionIp2city(){
+        $ip = Input::get('ip');
+        $ipUtil = new \bdlbs();
+        $re = $ipUtil->ip2city($ip);
+        return $re;
+    }
     
+    public function actionCorrd2city(){
+        $corrd = Input::get('corrd');
+        $ipUtil = new \bdlbs();
+        $re = $ipUtil->corrds2city($corrd);
+        return $re;
+    }
     
 }
 
