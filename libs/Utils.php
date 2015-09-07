@@ -51,5 +51,15 @@ class Utils {
         curl_close($ch);
         return $rtn;
     }
+    
+    private static function clean( $var ){
+        if (is_array($var)) {
+            return array_map(function ( $value ) {
+                return strip_tags($value);
+            }, $var);
+        }
+
+        return strip_tags($var);
+    }
 
 }

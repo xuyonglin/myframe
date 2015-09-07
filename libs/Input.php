@@ -1,4 +1,4 @@
-<?php namespace Azi;
+<?php
 
 class Input
 {
@@ -10,7 +10,9 @@ class Input
      */
     public static function post( $key, $xss_clean = true )
     {
-
+        if(!isset($_POST[$key])){
+            return '';
+        }
         if ($xss_clean) {
             return self::clean($_POST[ $key ]);
         }
@@ -25,6 +27,9 @@ class Input
      */
     public static function get( $key, $xss_clean = true )
     {
+        if(!isset($_GET[$key])){
+            return '';
+        }
         if ($xss_clean) {
             return self::clean($_GET[ $key ]);
         }
@@ -38,6 +43,9 @@ class Input
      */
     public static function request( $key, $xss_clean = true )
     {
+        if(!isset($_REQUEST[$key])){
+            return '';
+        }
         if ($xss_clean) {
             return self::clean($_REQUEST[ $key ]);
         }

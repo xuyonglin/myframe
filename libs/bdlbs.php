@@ -1,6 +1,5 @@
 <?php
 
-use Azi\Input;
 
 class bdlbs{
     
@@ -26,9 +25,13 @@ class bdlbs{
         $cacheKey = $this->cachePre . 'ip_' . ip2long($ip);
         $nowCity = $this->cache->get($cacheKey);
         if(!$nowCity){
-            $city = $this->getCityByIP($ip);
-            $nowCity = $city['content']['address_detail']['city'];
-            $this->cache->set($cacheKey, $nowCity, 30);
+            $nowCity = $this->getCityByIP($ip);
+            if($nowCity['status'] == 0){
+                $this->cache->set($cacheKey, $nowCity, 30);
+            }else{
+                $this->cache->set($cacheKey, 'nocity', 30);
+                return false;
+            }
         }
         return $nowCity;
     }

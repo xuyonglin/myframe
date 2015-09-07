@@ -28,7 +28,7 @@ class run{
             $c->init();
         }
         $re = $c->$aName();
-        var_dump($re);
+        echo $re;
     }
 }
 
