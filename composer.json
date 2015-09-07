@@ -8,7 +8,7 @@
         "applications/",
         "base/controllers/",
         "base/models/",
-        "helpers/"
+        "base/"
     ]
   }
 }

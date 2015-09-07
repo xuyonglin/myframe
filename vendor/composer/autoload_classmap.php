@@ -6,17 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Utils' => $baseDir . '/helpers/Utils.php',
+    'Utils' => $baseDir . '/libs/Utils.php',
     'applications\\demo\\controllers\\DemoController' => $baseDir . '/applications/demo/controllers/DemoController.php',
     'applications\\demo\\models\\AddressModel' => $baseDir . '/applications/demo/models/AddressModel.php',
     'applications\\demo\\models\\UserinfoModel' => $baseDir . '/applications/demo/models/UserinfoModel.php',
+    'applications\\intv\\controllers\\DemoController' => $baseDir . '/applications/intv/controllers/DemoController.php',
     'applications\\lbs\\controllers\\DefaultController' => $baseDir . '/applications/lbs/controllers/DefaultController.php',
-    'applications\\lbs\\controllers\\IndexController' => $baseDir . '/applications/lbs/controllers/IndexController.php',
-    'applications\\lbs\\models\\AddressModel' => $baseDir . '/applications/lbs/models/AddressModel.php',
-    'applications\\lbs\\models\\UserinfoModel' => $baseDir . '/applications/lbs/models/UserinfoModel.php',
     'base\\controllers\\BaseController' => $baseDir . '/base/controllers/BaseController.php',
     'base\\models\\BaseModel' => $baseDir . '/base/models/BaseModel.php',
     'bdlbs' => $baseDir . '/libs/bdlbs.php',
     'cache' => $baseDir . '/libs/cache.php',
-    'run' => $baseDir . '/libs/run.php',
+    'run' => $baseDir . '/base/run.php',
 );

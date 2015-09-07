@@ -4,20 +4,19 @@ use Azi\Input;
 
 class bdlbs{
     
-    private $config = false;
+    private $config = [
+                    'ak' => '20c023166a06dc5e190f2ac50c6adf3d',
+                    'sk' => 'EE0be1cc22282f9600654c06927bd0b6',
+                ];
     private $cachePre = 'myframe_lbs_';
     private $cache = false;
     
     public function __construct(){
-        $this->config = require(__DIR__ . '/../config/bdlbs.php');
         $this->cache = new cache();
     }
     
     
     public function getAk(){
-        if($this->config == false){
-            $this->config = require(__DIR__ . '/../config/bdlbs.php');
-        }
         return $this->config['ak'];
     }
     

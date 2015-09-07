@@ -28,7 +28,8 @@ class DemoController extends BaseController{
     public function actionResult(){
         $userModel = new UserinfoModel();
         //result/one/count
-        $re = $userModel->where(['id>0'])->orderBy('id desc')->limit(10)->result();
+        $re = $userModel->where(['id>0'])->orderBy('id desc')->count();
+        
         return $re;
     }
     
@@ -38,12 +39,18 @@ class DemoController extends BaseController{
         echo $ip;exit;
     }
     
+    //获取服务器时间
+    public function actionServertime1(){
+        return \Utils::getIP();
+        return 'var now_time = ' . time() . ';';
+    }
+    
     //修改数据
     public function actionUpdate(){
         $userModel = new UserinfoModel();
         $where = ['id>0'];
-        $colums = ['name' => 'xuyonglin1s', 'phone' => '18686629312'];
-        //update/updateOnes
+        $colums = ['name' => 'xuyonglin1', 'phone' => '18686629312'];
+        //update/updateOne
         $re = $userModel->updateOne($where, $colums);
         return $re;
     }

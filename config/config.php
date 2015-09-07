@@ -11,6 +11,7 @@ return [
     'applications' => [
         'lbs' => 'applications\lbs',
         'demo' => 'applications\demo',
+        'intv' => 'applications\intv',
     ],
     
     'db' => [
